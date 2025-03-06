@@ -1,13 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Web Template</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: clamp(1.5rem, 5vw, 3rem);
+      margin-bottom: 20px;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .box {
+      background: lightblue;
+      padding: 40px;
+      border-radius: 10px;
+    }
+    .viewport-demo {
+      margin-top: 30px;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 1px solid #ccc;
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to the Home Page</h1>
-    <p>This is the home page of the website.</p>
-    <p>Click <a href="about.php">here</a> to go to the about page.</p>
-
+  <h1>Responsive Web Page</h1>
+  <div class="container">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+  </div>
+   
+  <div class="viewport-demo">
+    <h2>Viewport Meta Tag Demo</h2>
+    <p>Try different viewport settings by viewing the pages below:</p>
+   <iframe srcdoc='<meta name="viewport" content="width=1024"><h3>Fixed Width: 1024px</h3><p>This page forces a width of 1024px.</p>'></iframe>
+  <iframe srcdoc='<meta name="viewport" content="width=device-width, initial-scale=2.0"><h3>Zoomed In (200%)</h3><p>This page starts at 200% zoom.</p>'></iframe>
+  <iframe srcdoc='<meta name="viewport" content="width=device-width, initial-scale=0.5"><h3>Zoomed Out (50%)</h3><p>This page starts at 50% zoom.</p>'></iframe>
+  <iframe srcdoc='<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><h3>No Zoom Allowed</h3><p>This page prevents zooming.</p>'></iframe>
+  </div>
 </body>
-
 </html>
