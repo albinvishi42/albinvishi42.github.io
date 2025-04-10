@@ -1,27 +1,115 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stortorget & Gustav Adolfs torg - Malmö</title>
-    <style>
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gustav Adolfs Torg i Malmö</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f0f5;
+      color: #333;
+    }
+
+    header {
+      background: #006699;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .image-box {
+      text-align: center;
+    }
+
+    #mainImage {
+      width: 100%;
+      max-height: 500px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .buttons button {
+      background-color: #006699;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .buttons button:hover {
+      background-color: #004466;
+    }
+
+    h2 {
+      color: #006699;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #ddd;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-    <header>Stortorget & Gustav Adolfs torg - Malmö</header>
-    <h1>Leo was here!</h1>
-    <div class="container">
-        <h2>Stortorget</h2>
-        <img src="stortorget.jpg" alt="Bild på Stortorget i Malmö">
-        <p>Stortorget är Malmös äldsta och största torg, omgivet av historiska byggnader och statyn av Kung Karl X Gustav.</p>
+
+  <header>
+    <h1>Gustav Adolfs Torg i Malmö</h1>
+  </header>
+
+  <div class="container">
+    <div class="image-box">
+      <img id="mainImage" src="bild1.jpg" alt="Gustav Adolfs Torg">
+      <div class="buttons">
+        <button onclick="changeImage(0)">Bild 1</button>
+        <button onclick="changeImage(1)">Bild 2</button>
+      </div>
     </div>
 
-    <div class="container">
-        <h2>Gustav Adolfs torg</h2>
-        <img src="gustav_adolfs_torg.jpg" alt="Bild på Gustav Adolfs torg i Malmö">
-        <img src="img/stortorget.png">
-        
-        <p>Gustav Adolfs torg är en livlig plats med shopping, caféer och kollektivtrafik, mitt i Malmös hjärta.</p>
-    </div>
+    <h2>Lite Historia</h2>
+    <p>
+      Gustav Adolfs torg är ett historiskt torg i centrala Malmö. Det har varit en plats för handel, möten och politiska händelser i flera hundra år.
+    </p>
+    <p>
+      Under 1800-talet fungerade torget som marknadsplats, och idag är det omgivet av butiker, restauranger och viktiga byggnader. 
+      Det är också en knutpunkt för kollektivtrafik och en plats för evenemang.
+    </p>
+  </div>
+
+  <footer>
+    © 2025 – En hemsida om Gustav Adolfs torg
+  </footer>
+
+  <script>
+    const images = ["bild1.jpg", "bild2.jpg"];
+    const mainImage = document.getElementById("mainImage");
+
+    function changeImage(index) {
+      mainImage.src = images[index];
+    }
+  </script>
+
 </body>
 </html>
