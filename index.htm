@@ -1,84 +1,100 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gustav Adolfs Torg i Malmö</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gustav Adolfs torg i Malmö</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f0f0f5;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
       color: #333;
+      animation: bodyFade 1.5s ease-in;
     }
 
     header {
-      background: #006699;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
       color: white;
-      padding: 30px;
+      padding: 3rem 1rem;
       text-align: center;
-      animation: fadeInDown 1s ease;
+      animation: fadeInDown 1s ease-out;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      animation: slideUp 1s ease;
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
     }
 
-    .image-box {
-      text-align: center;
-    }
-
-    #mainImage {
-      width: 100%;
-      max-height: 500px;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      object-fit: cover;
-      transition: opacity 0.5s ease;
-    }
-
-    .buttons {
+    nav {
       display: flex;
       justify-content: center;
-      gap: 10px;
+      background: #ff6f91;
+      padding: 1rem;
+      gap: 1.5rem;
       flex-wrap: wrap;
     }
 
-    .buttons button {
-      background-color: #006699;
+    nav a {
       color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.3s ease;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s;
     }
 
-    .buttons button:hover {
-      background-color: #004466;
+    nav a:hover {
+      transform: scale(1.1);
+      text-decoration: underline;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      animation: slideIn 1.2s ease-out;
+    }
+
+    .section h2 {
+      color: #ff6f91;
+      margin-top: 0;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
       transform: scale(1.05);
     }
 
-    h2 {
-      color: #006699;
-      border-left: 6px solid #ffcc00;
-      padding-left: 10px;
-      animation: fadeIn 1s ease;
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 12px;
     }
 
     footer {
+      background: #0072ff;
+      color: white;
       text-align: center;
-      background-color: #ddd;
-      padding: 15px;
-      margin-top: 40px;
-      animation: fadeInUp 1s ease;
+      padding: 1.5rem;
+      margin-top: 2rem;
     }
 
     @keyframes fadeInDown {
@@ -86,63 +102,82 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(20px); }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes bodyFade {
+      from { background-color: white; }
+      to { background: linear-gradient(to right, #ffecd2, #fcb69f); }
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .section {
+        margin: 1rem;
+        padding: 1rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Gustav Adolfs Torg i Malmö</h1>
+    <h1>Gustav Adolfs torg</h1>
+    <p>Malmös pulserande hjärta – historia, kultur och gemenskap</p>
   </header>
 
-  <div class="container">
-    <div class="image-box">
-      <img id="mainImage" src="bild1.jpg" alt="Gustav Adolfs Torg">
-      <div class="buttons">
-        <button onclick="changeImage(0)">Bild 1</button>
-        <button onclick="changeImage(1)">Bild 2</button>
-      </div>
-    </div>
+  <nav>
+    <a href="#historia">Historia</a>
+    <a href="#kultur">Kultur</a>
+    <a href="#bilder">Bilder</a>
+    <a href="#karta">Karta</a>
+  </nav>
 
-    <h2>Lite Historia</h2>
+  <section id="historia" class="section">
+    <h2>Historik</h2>
     <p>
-      Gustav Adolfs torg är ett historiskt torg i centrala Malmö. Det har varit en plats för handel, möten och politiska händelser i flera hundra år.
+      Gustav Adolfs torg har varit en av Malmös mest betydelsefulla platser sedan 1800-talet. Namngivet efter kung Gustav IV Adolf, har torget varit ett centrum för politik, handel och kultur i flera generationer.
     </p>
     <p>
-      Under 1800-talet fungerade torget som marknadsplats, och idag är det omgivet av butiker, restauranger och viktiga byggnader. 
-      Det är också en knutpunkt för kollektivtrafik och en plats för evenemang.
+      Under industrialiseringen blev torget en knutpunkt för spårvagnar, marknader och möten. Flera historiska byggnader omger platsen än idag och vittnar om stadens utveckling.
     </p>
-  </div>
+  </section>
+
+  <section id="kultur" class="section">
+    <h2>Kultur & Identitet</h2>
+    <p>
+      Gustav Adolfs torg är mer än bara en geografisk plats – det är en mötesplats för Malmös invånare. Här hålls konserter, demonstrationer, och kulturella evenemang året runt. 
+    </p>
+    <p>
+      Torget symboliserar stadens mångfald och engagemang. Oavsett kön, klass, etnicitet eller bakgrund samlas människor här för att uttrycka sig och känna tillhörighet.
+    </p>
+  </section>
+
+  <section id="bilder" class="section">
+    <h2>Bilder</h2>
+    <div class="gallery">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Gustav_Adolfs_torg_Malm%C3%B6.jpg" alt="Gustav Adolfs torg 1">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Gustav_Adolfs_torg_Malm%C3%B6.jpg/1024px-Gustav_Adolfs_torg_Malm%C3%B6.jpg" alt="Gustav Adolfs torg 2">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Gustav_Adolfs_torg_Malm%C3%B6_panorama.jpg" alt="Gustav Adolfs torg panorama">
+    </div>
+  </section>
+
+  <section id="karta" class="section">
+    <h2>Hitta hit</h2>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2252.382360368617!2d13.00238331592863!3d55.60585028052039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653a1f8587e1fd9%3A0xe0c9bd78939dbe0d!2sGustav%20Adolfs%20torg%2C%20Malm%C3%B6!5e0!3m2!1ssv!2sse!4v1614357841383!5m2!1ssv!2sse" 
+      allowfullscreen="" loading="lazy">
+    </iframe>
+  </section>
 
   <footer>
-    © 2025 – En hemsida om Gustav Adolfs torg
+    © 2025 | Skapat av Albin Vishi | Gymnasiearbete | Med kärlek till Malmö 💙
   </footer>
-
-  <script>
-    const images = ["bild1.jpg", "bild2.jpg"];
-    const mainImage = document.getElementById("mainImage");
-
-    function changeImage(index) {
-      mainImage.style.opacity = 0;
-      setTimeout(() => {
-        mainImage.src = images[index];
-        mainImage.style.opacity = 1;
-      }, 300);
-    }
-  </script>
 
 </body>
 </html>
