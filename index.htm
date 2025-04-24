@@ -113,3 +113,108 @@
 
 </body>
 </html>
+<section id="gustav-adolfs-torg" style="--primary:#006699; --primary-dark:#004466; --accent:#ffcc00; --background:#f0f0f5; font-family:'Segoe UI', sans-serif; color:#333; background:var(--background); padding:30px 15px;">
+  <style>
+    #gustav-adolfs-torg .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: slideUp 0.8s ease;
+    }
+
+    #gustav-adolfs-torg .image-box {
+      text-align: center;
+      position: relative;
+    }
+
+    #gustav-adolfs-torg #mainImage {
+      width: 100%;
+      max-height: 500px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      object-fit: cover;
+      transition: opacity 0.5s ease;
+    }
+
+    #gustav-adolfs-torg .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    #gustav-adolfs-torg .buttons button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    #gustav-adolfs-torg .buttons button:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    #gustav-adolfs-torg h2 {
+      color: var(--primary);
+      border-left: 6px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      #gustav-adolfs-torg .buttons {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <div class="image-box">
+      <img id="mainImage" src="bild1.jpg" alt="Gustav Adolfs Torg">
+      <div class="buttons">
+        <button onclick="changeImage(0)">Bild 1</button>
+        <button onclick="changeImage(1)">Bild 2</button>
+      </div>
+    </div>
+
+    <h2>Lite Historia</h2>
+    <p>
+      Gustav Adolfs torg är ett historiskt torg i centrala Malmö. Det har varit en plats för handel, möten och politiska händelser i flera hundra år.
+    </p>
+    <p>
+      Under 1800-talet fungerade torget som marknadsplats, och idag är det omgivet av butiker, restauranger och viktiga byggnader. 
+      Det är också en knutpunkt för kollektivtrafik och en plats för evenemang.
+    </p>
+  </div>
+
+  <script>
+    const images = ["bild1.jpg", "bild2.jpg"];
+    const mainImage = document.getElementById("mainImage");
+
+    function changeImage(index) {
+      mainImage.style.opacity = 0;
+      setTimeout(() => {
+        mainImage.src = images[index];
+        mainImage.style.opacity = 1;
+      }, 300);
+    }
+  </script>
+</section>
+<footer style="text-align: center; background-color: #ddd; padding: 15px; margin-top: 40px;">
+    © 2025 – En hemsida om Gustav Adolfs torg
+</footer>
