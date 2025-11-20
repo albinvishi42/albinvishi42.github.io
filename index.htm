@@ -1,186 +1,235 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gustav Adolfs torg i Malmö</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Bilportal – Mercedes · Audi · BMW</title>
   <style>
+    /* ====== UNIVERSITETSNIVÅ – MODERN, REN, PROFESSIONELL DESIGN ====== */
+    :root {
+      --primary: #0047b3;
+      --secondary: #1b1b1b;
+      --accent: #0077ff;
+      --bg: #f5f7fa;
+      --card: #ffffff;
+      --radius: 14px;
+      --shadow: 0 6px 20px rgba(0,0,0,0.12);
+      --transition: 0.3s ease;
+    }
+
     body {
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(to right, #ffecd2, #fcb69f);
-      color: #333;
-      animation: bodyFade 1.5s ease-in;
+      font-family: "Segoe UI", Roboto, Arial;
+      background: var(--bg);
+      color: var(--secondary);
     }
 
     header {
-      background: linear-gradient(to right, #00c6ff, #0072ff);
+      background: var(--primary);
       color: white;
-      padding: 3rem 1rem;
+      padding: 50px 20px;
       text-align: center;
-      animation: fadeInDown 1s ease-out;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
+      box-shadow: var(--shadow);
     }
 
     nav {
+      background: white;
       display: flex;
       justify-content: center;
-      background: #ff6f91;
-      padding: 1rem;
-      gap: 1.5rem;
-      flex-wrap: wrap;
+      gap: 40px;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
     }
 
     nav a {
-      color: white;
       text-decoration: none;
-      font-weight: bold;
-      transition: transform 0.2s;
+      font-size: 18px;
+      color: var(--primary);
+      font-weight: 600;
+      transition: var(--transition);
     }
 
     nav a:hover {
-      transform: scale(1.1);
-      text-decoration: underline;
+      color: var(--accent);
     }
 
-    .section {
-      max-width: 1000px;
-      margin: 2rem auto;
-      background: white;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      animation: slideIn 1.2s ease-out;
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
-    .section h2 {
-      color: #ff6f91;
+    .brand-section {
+      background: var(--card);
+      padding: 30px;
+      border-radius: var(--radius);
+      margin-bottom: 40px;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
       margin-top: 0;
+      font-size: 32px;
     }
 
-    .gallery {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
+    .models {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
     }
 
-    .gallery img {
+    .model-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .model-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .model-card img {
       width: 100%;
-      max-width: 300px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
+      height: 190px;
+      object-fit: cover;
     }
 
-    .gallery img:hover {
-      transform: scale(1.05);
+    .card-content {
+      padding: 15px;
     }
 
-    iframe {
-      width: 100%;
-      height: 400px;
-      border: none;
-      border-radius: 12px;
+    /* ====== GRAFISK FÖRETAGSLIK FIGUR ====== */
+    .chart-box {
+      margin-top: 50px;
+      background: var(--card);
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
     footer {
-      background: #0072ff;
-      color: white;
       text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes bodyFade {
-      from { background-color: white; }
-      to { background: linear-gradient(to right, #ffecd2, #fcb69f); }
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .section {
-        margin: 1rem;
-        padding: 1rem;
-      }
+      padding: 40px;
+      margin-top: 50px;
+      background: #eaeaea;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Gustav Adolfs torg</h1>
-    <p>Malmös pulserande hjärta – historia, kultur och gemenskap</p>
-  </header>
+<header>
+  <h1>Premium Bilportal</h1>
+  <p>En professionell översikt över tre av världens mest ikoniska bilmärken: Mercedes, Audi och BMW.</p>
+</header>
 
-  <nav>
-    <a href="#historia">Historia</a>
-    <a href="#kultur">Kultur</a>
-    <a href="#bilder">Bilder</a>
-    <a href="#karta">Karta</a>
-  </nav>
+<nav>
+  <a href="#mercedes">Mercedes</a>
+  <a href="#audi">Audi</a>
+  <a href="#bmw">BMW</a>
+</nav>
 
-  <section id="historia" class="section">
-    <h2>Historik</h2>
-    <p>
-      Gustav Adolfs torg har varit en av Malmös mest betydelsefulla platser sedan 1800-talet. Namngivet efter kung Gustav IV Adolf, har torget varit ett centrum för politik, handel och kultur i flera generationer.
-    </p>
-    <p>
-      Under industrialiseringen blev torget en knutpunkt för spårvagnar, marknader och möten. Flera historiska byggnader omger platsen än idag och vittnar om stadens utveckling.
-    </p>
-  </section>
+<div class="container">
 
-  <section id="kultur" class="section">
-    <h2>Kultur & Identitet</h2>
-    <p>
-      Gustav Adolfs torg är mer än bara en geografisk plats – det är en mötesplats för Malmös invånare. Här hålls konserter, demonstrationer, och kulturella evenemang året runt. 
-    </p>
-    <p>
-      Torget symboliserar stadens mångfald och engagemang. Oavsett kön, klass, etnicitet eller bakgrund samlas människor här för att uttrycka sig och känna tillhörighet.
-    </p>
-  </section>
+  <!-- ================= MERCEDES ================= -->
+  <section id="mercedes" class="brand-section">
+    <h2>Mercedes-Benz</h2>
+    <p>Mercedes är världsledande inom lyx, innovation och säkerhet. Deras bilar är kända för komfort och hög kvalitet.</p>
 
-  <section id="bilder" class="section">
-    <h2>Bilder</h2>
-    <div class="gallery">
-      <img src="img/gustav.jpg" alt="Gustav Adolfs torg panorama">
+    <div class="models">
+      <div class="model-card">
+        <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=800&q=60">
+        <div class="card-content">
+          <h3>Mercedes C-Class</h3>
+          <p>En modern och stilren mellanklassbil som kombinerar prestanda och vardagslyx.</p>
+        </div>
+      </div>
 
-      <img src="img/gustav2.jpg" alt="Gustav Adolfs torg panorama">
-
-      <img src="img/gustav3.jpg" alt="Gustav Adolfs torg panorama">
+      <div class="model-card">
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=60">
+        <div class="card-content">
+          <h3>Mercedes S-Class</h3>
+          <p>En av världens mest avancerade lyxbilar med toppteknologi och extrem komfort.</p>
+        </div>
+      </div>
     </div>
   </section>
-  >
 
-  <section id="karta" class="section">
-    <h2>Hitta hit</h2>
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2252.382360368617!2d13.00238331592863!3d55.60585028052039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4653a1f8587e1fd9%3A0xe0c9bd78939dbe0d!2sGustav%20Adolfs%20torg%2C%20Malm%C3%B6!5e0!3m2!1ssv!2sse!4v1614357841383!5m2!1ssv!2sse" 
-      allowfullscreen="" loading="lazy">
-    </iframe>
+  <!-- ================= AUDI ================= -->
+  <section id="audi" class="brand-section">
+    <h2>Audi</h2>
+    <p>Audi kombinerar modern design, quattro-teknik och hög precision. Märket står för balans mellan sportighet och lyx.</p>
+
+    <div class="models">
+      <div class="model-card">
+        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=60">
+        <div class="card-content">
+          <h3>Audi A4</h3>
+          <p>Ett av Audis mest populära val, känd för precision och körglädje.</p>
+        </div>
+      </div>
+
+      <div class="model-card">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=60">
+        <div class="card-content">
+          <h3>Audi A6</h3>
+          <p>En rymligare och mer tekniskt avancerad modell för professionella förare.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    © 2025 | Skapat av Albin Vishi | Gymnasiearbete | Med kärlek till Malmö 💙
-  </footer>
+  <!-- ================= BMW ================= -->
+  <section id="bmw" class="brand-section">
+    <h2>BMW</h2>
+    <p>BMW är synonymt med sportig körkänsla, exakta köregenskaper och hög teknisk standard.</p>
+
+    <div class="models">
+      <div class="model-card">
+        <img src="https://images.unsplash.com/photo-1502877828079-3d1827f5a5a5?auto=format&fit=crop&w=800&q=60">
+        <div class="card-content">
+          <h3>BMW 3-serien</h3>
+          <p>En global ikon känd för sina sportiga egenskaper och perfekta balans.</p>
+        </div>
+      </div>
+
+      <div class="model-card">
+        <img src="https://images.unsplash.com/photo-1517148815978-75f6acaaff84?auto=format&fit=crop&w=800&q=60">
+        <div class="card-content">
+          <h3>BMW 5-serien</h3>
+          <p>Kombinerar prestanda, komfort och långfärdskänsla på högsta nivå.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GRAFISK JÄMFÖRELSE ================= -->
+  <section class="chart-box">
+    <h2>Grafisk Jämförelse</h2>
+    <p>En enkel figur som representerar varumärkens marknadsprofil visuellt.</p>
+
+    <svg width="100%" height="180">
+      <circle cx="20%" cy="90" r="50" fill="#0047b3" opacity="0.85"></circle>
+      <circle cx="50%" cy="90" r="45" fill="#cc0000" opacity="0.85"></circle>
+      <circle cx="80%" cy="90" r="40" fill="#00a859" opacity="0.85"></circle>
+
+      <text x="18%" y="160" font-size="16">Mercedes</text>
+      <text x="48%" y="160" font-size="16">Audi</text>
+      <text x="78%" y="160" font-size="16">BMW</text>
+    </svg>
+  </section>
+
+</div>
+
+<footer>
+  © 2025 Premium Bilportal – Avancerad studentproduktion.
+</footer>
 
 </body>
 </html>
